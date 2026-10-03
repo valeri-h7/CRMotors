@@ -1,0 +1,68 @@
+/* (.section-head, .btn y .btn--outline viven en styles/global.css) */
+
+.repuestos__inner .section-head {
+  max-width: 720px;
+}
+
+.repuestos__categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 1.25rem;
+}
+
+.repuestos__chip {
+  padding: 6px 14px;
+
+  border-radius: 999px;
+  background: var(--color-gris-oscuro);
+  color: var(--color-blanco);
+
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.repuestos__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 18px 16px;
+
+  background: var(--color-gris-oscuro);
+  color: var(--color-blanco);
+  border-radius: var(--radius-md);
+}
+
+.repuestos__cta p {
+  max-width: 480px;
+  font-size: var(--fs-sm);
+}
+
+.repuestos__cta-botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 641px) {
+  .repuestos__categorias { gap: 10px; margin-bottom: 1.75rem; }
+
+  .repuestos__chip { padding: 8px 16px; }
+
+  .repuestos__cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 28px;
+  }
+
+  .repuestos__cta p { font-size: var(--fs-base); }
+
+  .repuestos__cta-botones {
+    display: flex;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,50 @@
+.trabajamos-todos {
+  overflow: hidden;
+}
+
+.trabajamos-todos__head {
+  max-width: 620px;
+}
+
+.trabajamos-todos__head h2 {
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.trabajamos-todos__head p {
+  color: var(--color-amarillo);
+  font-size: var(--fs-base);
+}
+
+.trabajamos-todos__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  margin-top: clamp(1.25rem, 1rem + 1.5vw, 2.5rem);
+}
+
+.trabajamos-todos__item {
+  padding-top: 12px;
+  border-top: 3px solid var(--color-rojo);
+}
+
+.trabajamos-todos__item h3 {
+  margin-bottom: 0.4rem;
+
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+  text-transform: uppercase;
+}
+
+.trabajamos-todos__item p {
+  color: var(--color-gris-medio);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 769px) {
+  .trabajamos-todos__grid { gap: 24px; }
+
+  .trabajamos-todos__item { padding-top: 16px; }
+
+  .trabajamos-todos__item p { font-size: var(--fs-base); }
+}

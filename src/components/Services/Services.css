@@ -1,0 +1,135 @@
+.services-section {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: var(--space-section) var(--gutter);
+  background-color: #ffffff;
+}
+
+/* ---------- Encabezado ---------- */
+
+.services-header {
+  margin-bottom: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
+  text-align: center;
+}
+
+.services-header h2 {
+  margin-bottom: 0.5rem;
+
+  color: #1e293b;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.services-header p {
+  max-width: 650px;
+  margin-inline: auto;
+
+  color: #64748b;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+
+/* ---------- Grilla: 2 columnas en celular ---------- */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 1rem 0.65rem;
+
+  /* En celular cada servicio es una tarjetita, para que con 2 columnas
+     no se mezclen unos con otros */
+  background-color: #f8fafc;
+  border-radius: var(--radius-md);
+}
+
+.service-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+  margin-bottom: 0.65rem;
+
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.service-icon {
+  width: 32px;
+  height: 32px;
+  color: #1e293b;
+}
+
+.service-card h3 {
+  margin-bottom: 0.4rem;
+
+  color: #1e293b;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.service-card p {
+  color: #475569;
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (min-width: 700px) {
+  .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+  }
+
+  .service-card {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .service-icon-container {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1rem;
+    background-color: #f8fafc;
+  }
+
+  .service-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.05rem, 0.9rem + 0.5vw, 1.25rem);
+    letter-spacing: 0.5px;
+  }
+
+  .service-card p {
+    max-width: 280px;
+    font-size: var(--fs-base);
+    line-height: 1.6;
+  }
+}
+
+/* ---------- Compu ---------- */
+
+@media (min-width: 1000px) {
+  .services-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,114 @@
+/* =========================
+   CARRUSEL DE MARCAS
+========================= */
+
+.brand-carousel {
+  margin-block: 1rem;
+  overflow: hidden;
+}
+
+.brand-carousel__viewport {
+  overflow: hidden;
+  padding-block: 6px 10px;
+}
+
+.brand-carousel__track {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+  gap: 12px;
+
+  list-style: none;
+  animation: marcas-mover 24s linear infinite;
+}
+
+/* Tarjeta de cada marca */
+.brand-carousel__item {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 120px;
+  min-height: 64px;
+  padding: 14px 10px;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+
+  color: var(--color-blanco);
+
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .brand-carousel__item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-rojo);
+  }
+}
+
+.brand-carousel__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 44px;
+}
+
+.brand-carousel__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-carousel__name {
+  color: var(--color-blanco);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@keyframes marcas-mover {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 6px)); }   /* 6px = mitad del gap */
+}
+
+@media (min-width: 601px) {
+  .brand-carousel { margin-block: 1.25rem; }
+
+  .brand-carousel__track {
+    gap: 16px;
+    animation-duration: 30s;
+  }
+
+  .brand-carousel__item {
+    width: 160px;
+    padding: 18px 12px;
+  }
+
+  .brand-carousel__logo {
+    width: 62px;
+    height: 52px;
+  }
+
+  .brand-carousel__name { font-size: 0.75rem; }
+
+  @keyframes marcas-mover {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 8px)); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-carousel__track { animation: none; }
+}

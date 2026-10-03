@@ -1,0 +1,79 @@
+.payments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.payments__title {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a6a6a6;
+}
+
+.payments__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.payments__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 3px 6px;
+
+  background: rgba(11, 11, 11, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.payments__item svg {
+  flex-shrink: 0;
+}
+
+/* Tarjetas: 3:2 como los logos originales */
+.payments__item--card svg {
+  width: 40px;
+  height: 27px;
+}
+
+.payments__item--icon {
+  min-height: 35px;
+}
+
+.payments__item--icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.payments__item--icon span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 769px) {
+  .payments__list { gap: 12px; }
+
+  .payments__item { padding: 4px 8px; }
+
+  .payments__item--card svg {
+    width: 48px;
+    height: 32px;
+  }
+
+  .payments__item--icon { min-height: 42px; }
+
+  .payments__item--icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .payments__item--icon span { font-size: 0.75rem; }
+}

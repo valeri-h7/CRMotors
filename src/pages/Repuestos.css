@@ -1,0 +1,71 @@
+/* (.section-head y .btn viven en styles/global.css) */
+
+.repuestos-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+
+  margin-bottom: 1.75rem;
+}
+
+.repuestos-page__card {
+  padding: 16px 14px;
+
+  background: var(--color-gris-oscuro);
+  color: var(--color-blanco);
+  border-top: 3px solid var(--color-rojo);
+  border-radius: var(--radius-md);
+}
+
+.repuestos-page__card h3 {
+  margin-bottom: 0.4rem;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.repuestos-page__card p {
+  color: var(--color-gris-medio);
+  font-size: var(--fs-sm);
+}
+
+.repuestos-page__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 18px 16px;
+
+  background: var(--color-negro);
+  color: var(--color-blanco);
+  border-radius: var(--radius-md);
+}
+
+.repuestos-page__cta p {
+  max-width: 480px;
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 701px) {
+  .repuestos-page__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 2.5rem;
+  }
+
+  .repuestos-page__card { padding: 24px; }
+
+  .repuestos-page__card h3 { font-size: 1.1rem; }
+
+  .repuestos-page__card p { font-size: var(--fs-base); }
+
+  .repuestos-page__cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 28px;
+  }
+
+  .repuestos-page__cta p { font-size: var(--fs-base); }
+}

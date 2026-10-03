@@ -1,0 +1,304 @@
+/* ===================================================
+   CONOCENOS — pensado primero para celular;
+   los @media (min-width) lo van llevando a la compu.
+   =================================================== */
+
+.conocenos {
+  background-color: #ffffff;
+}
+
+.conocenos__inner .section-head {
+  max-width: 720px;
+  margin: 0 auto clamp(1.5rem, 1rem + 2.5vw, 4rem);
+  text-align: center;
+}
+
+.conocenos__inner .section-head h2 {
+  margin-bottom: 0.6rem;
+
+  color: var(--color-negro);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.conocenos__inner .section-head p {
+  margin-inline: auto;
+
+  color: #444444;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+
+/* --- Contenido: en celular, foto arriba y texto abajo --- */
+
+.conocenos__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* --- Foto con marco rojo descentrado --- */
+
+.conocenos__image-wrapper {
+  position: relative;
+  width: calc(100% - 12px);
+  margin-left: 12px;
+}
+
+.conocenos__image-wrapper::before {
+  content: '';
+
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  right: 12px;
+  bottom: -12px;
+  z-index: 0;
+
+  border: 2px solid var(--color-rojo);
+  border-radius: var(--radius-md);
+}
+
+.conocenos__image {
+  position: relative;
+  z-index: 1;
+
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+}
+
+.conocenos__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 50%;
+
+  transition: transform 0.7s ease;
+}
+
+@media (hover: hover) {
+  .conocenos__image:hover img { transform: scale(1.04); }
+}
+
+/* --- Placa sobre la foto --- */
+
+.conocenos__image-label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  padding: 8px 12px;
+
+  background: rgba(11, 11, 11, 0.88);
+  border-left: 3px solid var(--color-rojo);
+}
+
+.conocenos__image-label span {
+  color: var(--color-blanco);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.conocenos__image-label small {
+  color: var(--color-amarillo);
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* --- Texto --- */
+
+.conocenos__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.conocenos__small-title {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+
+  color: var(--color-rojo);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.conocenos__text h3 {
+  margin-bottom: 0.9rem;
+
+  color: var(--color-negro);
+  font-size: clamp(1.3rem, 1rem + 1.6vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.conocenos__text h3 span {
+  color: var(--color-rojo);
+}
+
+.conocenos__text p {
+  margin-bottom: 0.75rem;
+
+  color: #222222;
+  font-size: var(--fs-base);
+  line-height: 1.65;
+}
+
+.conocenos__text p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* --- Estadísticas: 3 columnas parejas en celular --- */
+
+.conocenos__highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
+
+  border-top: 1px solid var(--color-amarillo);
+  text-align: center;
+}
+
+.conocenos__highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  padding-inline: 6px;
+}
+
+.conocenos__highlight + .conocenos__highlight {
+  border-left: 2px solid var(--color-amarillo);
+}
+
+.conocenos__highlight strong {
+  color: var(--color-rojo);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.conocenos__highlight span {
+  color: #6b6b6b;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+/* ===================================================
+   TABLET (el texto y la foto ya respiran más)
+   =================================================== */
+
+@media (min-width: 601px) {
+  .conocenos__image-wrapper {
+    width: calc(100% - 16px);
+    margin-left: 16px;
+  }
+
+  .conocenos__image-wrapper::before {
+    top: 16px;
+    left: -16px;
+    right: 16px;
+    bottom: -16px;
+  }
+
+  .conocenos__image { aspect-ratio: 16 / 10; }
+
+  .conocenos__image-label {
+    left: 16px;
+    bottom: 16px;
+    padding: 10px 16px;
+  }
+
+  .conocenos__highlight strong { font-size: 1.6rem; }
+  .conocenos__highlight span { font-size: 0.75rem; }
+}
+
+/* ===================================================
+   COMPU: dos columnas, foto + texto
+   =================================================== */
+
+@media (min-width: 901px) {
+  .conocenos__content {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: 64px;
+  }
+
+  .conocenos__image-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .conocenos__image-wrapper::before {
+    top: 20px;
+    left: -20px;
+    right: 20px;
+    bottom: -20px;
+  }
+
+  .conocenos__image {
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+  }
+
+  .conocenos__image img { object-position: center; }
+
+  .conocenos__image-label {
+    left: 20px;
+    bottom: 20px;
+    padding: 12px 18px;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .conocenos__image-label span { font-size: 1.15rem; }
+  .conocenos__image-label small { font-size: 0.75rem; }
+
+  .conocenos__text p { margin-bottom: 1rem; }
+
+  /* Estadísticas en fila, como en la versión de escritorio original */
+  .conocenos__highlights {
+    display: flex;
+    gap: 32px;
+
+    margin-top: 36px;
+    padding-top: 28px;
+
+    text-align: left;
+  }
+
+  .conocenos__highlight {
+    align-items: flex-start;
+    gap: 6px;
+    padding-inline: 0;
+  }
+
+  .conocenos__highlight + .conocenos__highlight {
+    padding-left: 32px;
+  }
+
+  .conocenos__highlight strong { font-size: 2.1rem; }
+  .conocenos__highlight span { font-size: 0.8rem; letter-spacing: 0.5px; }
+}

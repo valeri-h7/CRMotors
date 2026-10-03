@@ -1,0 +1,295 @@
+.turno {
+  width: 100%;
+  background: transparent;
+  color: var(--color-negro);
+}
+
+.turno__inner {
+  max-width: 760px;
+}
+
+.turno__intro {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.turno__intro h2 {
+  margin-bottom: 0.4rem;
+
+  color: var(--color-blanco);
+  text-transform: uppercase;
+}
+
+.turno__intro p {
+  color: #bdbdbd;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.turno__card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 20px 16px;
+
+  background: var(--color-blanco);
+  border: 1px solid #e4e4e4;
+  border-top: 4px solid var(--color-rojo);
+  border-radius: var(--radius-md);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.turno__ticket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 12px;
+
+  border-bottom: 2px dashed #ddd;
+
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--color-rojo);
+  text-transform: uppercase;
+}
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+.turno__card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: #222;
+}
+
+.turno__card input,
+.turno__card textarea {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: var(--radius-sm);
+  background: #fafafa;
+
+  font-family: var(--font-body);
+  /* 16px: con menos, iPhone hace zoom solo al tocar el campo
+     y la página "se desforma". */
+  font-size: 1rem;
+  font-weight: 400;
+  color: #222;
+
+  outline: none;
+
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.turno__card input:focus,
+.turno__card textarea:focus {
+  border-color: var(--color-rojo);
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(215, 25, 32, 0.12);
+}
+
+.turno__card textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.turno__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* ========================================
+   FOTOS
+======================================== */
+
+.turno__fotos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.turno__fotos-titulo {
+  color: #222;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+/* El input real se oculta (pero sigue accesible con teclado);
+   lo que se ve es el botón de al lado. */
+.turno__fotos-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.turno__fotos-boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 0 1.1rem;
+
+  border: 1.5px dashed #b5b5b5;
+  border-radius: var(--radius-sm);
+  background: #fafafa;
+
+  color: #222;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.turno__fotos-boton:hover {
+  border-color: var(--color-rojo);
+}
+
+.turno__fotos-input:focus-visible + .turno__fotos-boton {
+  outline: 2px solid var(--color-rojo);
+  outline-offset: 2px;
+}
+
+.turno__fotos-boton.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.turno__fotos-lista {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.turno__fotos-lista li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  padding: 4px 4px 4px 12px;
+
+  background: #f0f0f0;
+  border-radius: var(--radius-sm);
+
+  color: #222;
+  font-size: var(--fs-sm);
+}
+
+.turno__fotos-lista li span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.turno__fotos-lista li button {
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  background: transparent;
+  color: #555;
+}
+
+.turno__fotos-lista li button:hover {
+  color: var(--color-rojo);
+}
+
+.turno__error {
+  color: #b00020;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.turno__sin-fotos {
+  color: #222;
+}
+
+/* Pantalla "tu pedido está listo" */
+
+.turno__listo {
+  align-items: center;
+  text-align: center;
+  padding-block: 2rem;
+}
+
+.turno__listo-icono {
+  color: #25d366;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.turno__listo h2 {
+  color: var(--color-negro);
+  text-transform: uppercase;
+}
+
+.turno__listo p {
+  max-width: 28em;
+  color: #444;
+}
+
+.turno__hint {
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  color: #666;
+}
+
+.turno__card .btn {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ========================================
+   TABLET Y COMPU
+======================================== */
+
+@media (min-width: 601px) {
+  .turno__intro {
+    margin-bottom: 1.5rem;
+  }
+
+  .turno__card {
+    gap: 16px;
+    padding: 28px;
+  }
+
+  .turno__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .turno__ticket {
+    font-size: 0.9rem;
+  }
+
+  .turno__card .btn {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+/* El botón de la pantalla "listo" va centrado */
+.turno__listo .btn {
+  align-self: center;
+  width: auto;
+}

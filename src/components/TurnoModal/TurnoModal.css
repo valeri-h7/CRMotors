@@ -1,0 +1,93 @@
+/* ========================================
+   MODAL FORMULARIO DE TURNOS
+======================================== */
+
+.turno-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.turno-modal__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.turno-modal__content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 850px;
+  max-height: 90vh;
+  max-height: 90dvh;
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  background: var(--color-negro);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--color-rojo);
+  border-radius: 8px;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+}
+
+.turno-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-blanco);
+  font-size: 1rem;
+
+  transition: background-color 0.2s ease;
+}
+
+.turno-modal__close:hover {
+  background: var(--color-rojo);
+}
+
+/* Formulario dentro del modal */
+
+.turno-modal .turno__inner {
+  padding-top: 56px;
+  padding-bottom: 28px;
+}
+
+/* Celular: el formulario ocupa toda la pantalla */
+
+@media (max-width: 600px) {
+  .turno-modal {
+    padding: 0;
+  }
+
+  .turno-modal__content {
+    height: 100%;
+    max-height: none;
+
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

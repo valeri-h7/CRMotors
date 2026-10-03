@@ -1,0 +1,55 @@
+/* ============================================================
+   UBICACIÓN Y PAGOS
+   ============================================================ */
+
+.ubicacion {
+  padding-top: 1.5rem;
+  background: var(--color-negro);
+  color: var(--color-blanco);
+}
+
+.ubicacion__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  padding-bottom: 1.5rem;
+}
+
+.ubicacion__item {
+  text-align: center;
+}
+
+.ubicacion__item h3 {
+  margin-bottom: 4px;
+
+  color: var(--color-amarillo);
+  font-size: 1rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.ubicacion__item p {
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+}
+
+
+.ubicacion__mapa iframe {
+  display: block;
+  width: 100%;
+  height: clamp(250px, 50vw, 400px);
+  border: 0;
+}
+
+@media (min-width: 769px) {
+  .ubicacion { padding-top: 2rem; }
+
+  .ubicacion__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    padding-bottom: 2rem;
+  }
+
+}

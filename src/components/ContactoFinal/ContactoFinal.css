@@ -1,0 +1,29 @@
+/* (.btn, .btn--primary y .btn--outline viven en styles/global.css;
+   el modal del formulario vive en components/TurnoModal) */
+
+.contacto-final__inner {
+  text-align: center;
+}
+
+.contacto-final__inner h2 {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.contacto-final__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+@media (min-width: 601px) {
+  .contacto-final__actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+}

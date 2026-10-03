@@ -1,0 +1,43 @@
+:root {
+  /* ---------- Paleta CR Motors ---------- */
+  --color-rojo: #D71920;       /* principal / acción */
+  --color-negro: #0B0B0B;
+  --color-gris-oscuro: #1C1C1C;
+  --color-gris-medio: #8A8A8A;
+  --color-blanco: #F5F5F5;
+  --color-amarillo: #F5C400;   /* solo acento puntual, sin abusar */
+
+  /* ---------- Tipografías ---------- */
+  --font-display: 'Saira Condensed', sans-serif; /* títulos */
+  --font-body: 'Inter', sans-serif;               /* texto */
+
+  /* ---------- Bordes ---------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* ---------- Layout ---------- */
+  --container-width: 1180px;
+  --header-h: 60px;                                   /* alto del header (celu) */
+
+  /* ---------- Espaciados fluidos ----------
+     Crecen solos con el ancho de pantalla: chicos en celular,
+     más generosos en compu. Así no hace falta un media query por sección. */
+  --gutter: clamp(1rem, 0.75rem + 1.2vw, 1.5rem);          /* 16px → 24px */
+  --space-section: clamp(2.5rem, 1.8rem + 3.5vw, 5rem);    /* 40px → 80px */
+
+  /* ---------- Escala tipográfica fluida ----------
+     Mínimo pensado para celular (~360px), máximo para compu.
+     Todo el sitio usa estas variables: para achicar o agrandar
+     el texto de TODA la web, se cambia acá. */
+  --fs-xs: 0.75rem;                                         /* 12px */
+  --fs-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);     /* 13px → 14px */
+  --fs-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);        /* 15px → 16px */
+  --fs-lg: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);          /* 16px → 18px */
+  --fs-h3: clamp(1.05rem, 0.95rem + 0.5vw, 1.35rem);        /* 17px → 22px */
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);           /* 24px → 40px */
+  --fs-h1: clamp(1.9rem, 1.4rem + 2.8vw, 3.5rem);           /* 30px → 56px */
+}
+
+@media (min-width: 861px) {
+  :root { --header-h: 72px; }
+}

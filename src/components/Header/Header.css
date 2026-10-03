@@ -1,0 +1,173 @@
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  border-bottom: 2px solid var(--color-rojo);
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Transparente mientras estás arriba del Hero */
+.header--home {
+  background: transparent;
+}
+
+/* Negro desde el principio en las otras páginas */
+.header--inner-page {
+  background: var(--color-negro);
+}
+
+/* Home: se oscurece al hacer scroll */
+.header--home.header--scrolled {
+  background: var(--color-negro);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.header__inner {
+  height: var(--header-h);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ---------- Logo ---------- */
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header__logo img {
+  height: calc(var(--header-h) - 20px);   /* 40px en celu / 52px en compu */
+  width: auto;
+}
+
+/* ---------- Navegación (compu) ---------- */
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header__nav a:not(.btn) {
+  color: var(--color-blanco);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.header__nav a:not(.btn):hover,
+.header__nav a[aria-current='page'] {
+  color: var(--color-rojo);
+}
+
+.header__nav-cta {
+  display: none;
+}
+
+/* ---------- Acciones ---------- */
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__cta {
+  min-height: 40px;
+  padding: 0.55em 1.2em;
+}
+
+/* ---------- Botón hamburguesa ---------- */
+
+.header__toggle {
+  display: none;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  width: 44px;
+  height: 44px;
+  margin-right: -8px;      /* alinea las rayitas con el borde del contenido */
+
+  background: transparent;
+}
+
+.header__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-blanco);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* Se transforma en una X cuando el menú está abierto */
+.header__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.header__toggle.is-open span:nth-child(2) { opacity: 0; }
+.header__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===================================================
+   CELULAR / TABLET
+   =================================================== */
+
+@media (max-width: 860px) {
+  /* Con el menú abierto el header se pone negro, también arriba del Hero */
+  .header--menu-open {
+    background: var(--color-negro);
+  }
+
+  .header__cta {
+    display: none;   /* en celu el WhatsApp va dentro del menú */
+  }
+
+  .header__toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    padding: 8px var(--gutter) 20px;
+
+    max-height: calc(100vh - var(--header-h));
+    max-height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+
+    background: var(--color-negro);
+    border-bottom: 2px solid var(--color-rojo);
+  }
+
+  .header__nav.is-open {
+    display: flex;
+  }
+
+  .header__nav a:not(.btn) {
+    padding: 14px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header__nav-cta {
+    display: inline-flex;
+    margin-top: 16px;
+  }
+}

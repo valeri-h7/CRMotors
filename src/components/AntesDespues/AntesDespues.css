@@ -1,0 +1,38 @@
+/* (.container, .section, .section--dark y .section-head viven en
+   styles/global.css) */
+
+/* ===================================================
+   ANTES Y DESPUÉS
+   (Nota: esto todavía es un placeholder estático — falta
+   el comparador arrastrable con las fotos reales)
+   =================================================== */
+
+.antes-despues__comparador {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.antes-despues__lado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 140px;
+
+  background: #2a2a2a;
+}
+
+.antes-despues__lado span {
+  color: var(--color-gris-medio);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  letter-spacing: 2px;
+}
+
+@media (min-width: 601px) {
+  .antes-despues__lado { height: 220px; }
+}
